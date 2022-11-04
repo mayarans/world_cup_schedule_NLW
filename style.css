@@ -3,13 +3,37 @@
   padding: 0;
 }
 
+:root {
+  --card-color-primary: #9b277e;
+  --card-title-border-color: #9b277e;
+  --card-bg-color: #1D1C19;
+  --bg: url(./assets/bg-purple.svg);
+  --sidebar-icon: #E1E1E6;
+}
+
+body.blue {
+  --card-color-primary: #338AF3;
+  --card-title-border-color: #338AF3;
+  --card-bg-color: #202024;
+  --bg: url(./assets/bg-blue.svg);
+  --sidebar-icon: #E1E1E6;
+}
+
+body.green {
+  --card-color-primary: #047C3F;
+  --card-title-border-color: #047C3F;
+  --card-bg-color: #1A1F1B;
+  --bg: url(./assets/bg-green.svg);
+  --sidebar-icon: #E1E1E6;
+}
 
 body {
   font-family: "Roboto";
   background-color: #121214;
-  background-image: url(./assets/bg.svg);
-  background-position-x: center;
-  background-position-y: 55.6%;
+  background-image: var(--bg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 ul {
@@ -27,25 +51,25 @@ ul {
 
 header {
   margin-bottom: 63px;
-
+  text-align: center;
 }
 
 
 .card {
   text-align: center;
-  background-color: #1D1C19;
+  background-color: var(--card-bg-color);
   padding: 32px 23px;
-  border-bottom: 2px solid #F7DD43;
+  border-bottom: 2px solid var(--card-color-primary);
   border-radius: 6px;
 
 }
 
 .card h2 {
-  border: 1px solid #746615;
+  border: 1px solid var(--card-title-border-color);
   border-radius: 6px;
   color: white;
   padding: 8px 16px;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
   color: #F7DD43;
@@ -78,4 +102,73 @@ li {
 ul li+li {
   border-top: 1px solid #5b5b62;
   padding-top: 24px;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar {
+  width: 50px;
+  height: 100%;
+  background-color: var(--card-color-primary);
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.left-menu-icon {
+  color: var(--sidebar-icon);
+  font-size: 25px;
+}
+
+#icon-side-menu:hover,
+.card h2:hover,
+.bandeira:hover,
+.hora:hover {
+  transform: scale(1.1);
+}
+
+#icon-side-menu,
+.card h2,
+.bandeira,
+.hora{
+  transition: transform 0.3s;
+}
+
+.card:neh-child() {
+  animation-delay: .3s;
+}
+
+.card {
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  opacity: 0;
+  animation: appear 1s forwards;
+}
+
+@media (min-width:700px) {
+  #cards {
+    max-width: 700px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
