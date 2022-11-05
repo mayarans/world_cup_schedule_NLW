@@ -32,7 +32,7 @@ const json = [
     ],
   },
   {
-    date: "22/11/2022",
+    date: "22/11",
     day: "terça-feira",
     games: [
       {
@@ -58,7 +58,7 @@ const json = [
     ],
   },
   {
-    date: "23/11/2022",
+    date: "23/11",
     day: "quarta-feira",
     games: [
       {
@@ -84,7 +84,7 @@ const json = [
     ],
   },
   {
-    date: "24/11/2022",
+    date: "24/11",
     day: "quinta-feira",
     games: [
       {
@@ -110,7 +110,7 @@ const json = [
     ],
   },
   {
-    date: "25/11/2022",
+    date: "25/11",
     day: "sexta-feira",
     games: [
       {
@@ -136,7 +136,7 @@ const json = [
     ],
   },
   {
-    date: "26/11/2022",
+    date: "26/11",
     day: "sábado",
     games: [
       {
@@ -162,7 +162,7 @@ const json = [
     ],
   },
   {
-    date: "27/11/2022",
+    date: "27/11",
     day: "domingo",
     games: [
       {
@@ -188,7 +188,7 @@ const json = [
     ],
   },
   {
-    date: "28/11/2022",
+    date: "28/11",
     day: "segunda-feira",
     games: [
       {
@@ -214,7 +214,7 @@ const json = [
     ],
   },
   {
-    date: "29/11/2022",
+    date: "29/11",
     day: "terça-feira",
     games: [
       {
@@ -240,7 +240,7 @@ const json = [
     ],
   },
   {
-    date: "30/11/2022",
+    date: "30/11",
     day: "quarta-feira",
     games: [
       {
@@ -266,7 +266,7 @@ const json = [
     ],
   },
   {
-    date: "01/12/2022",
+    date: "01/12",
     day: "quinta-feira",
     games: [
       {
@@ -292,7 +292,7 @@ const json = [
     ],
   },
   {
-    date: "02/12/2022",
+    date: "02/12",
     day: "sexta-feira",
     games: [
       {
