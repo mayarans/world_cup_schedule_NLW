@@ -1,5 +1,7 @@
 import json from "./games.js"
 
+const getBody = document.querySelector("body")
+
 let color = 'purple'
 function changeColors() {
   if (color=='purple') {
@@ -79,7 +81,6 @@ document.querySelector("#cards").innerHTML = createAllCards()
 
 
 // CALENDAR
-
 const currentDate = document.querySelector(".current-date"),
   daysTag = document.querySelector(".days"),
   prevNextIcon = document.querySelectorAll(".icons i")
@@ -141,23 +142,9 @@ const renderCalendar = () => {
 
   currentDate.innerHTML = `${months[currMonth]} ${currYear}`
   daysTag.innerHTML = liTag
+
+  setDatesClickable();
 }
-
-renderCalendar()
-
-prevNextIcon.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1
-    if (currMonth < 0) {
-      currMonth = 11
-      currYear -= 1
-    } else if (currMonth > 11) {
-      currMonth = 0
-      currYear += 1
-    }
-    renderCalendar()
-  })
-})
 
 const modal = document.querySelector("#calendar-modal"),
   btnOpenModal = document.querySelector("#calendar-side-menu"),
@@ -177,18 +164,36 @@ window.onclick = function (event) {
   }
 }
 
-const dates = document.querySelectorAll(".days li")
-const getBody = document.querySelector("body")
-dates.forEach((i) => {
-  i.addEventListener("click", () => {
-    changeColors()
-    modal.style.display = "none"
-    getBody.style.backgroundSize = "cover"
-    const searchedDate = searchDate(i.getAttribute("data"))
-    delay = -0.4
-    document.querySelector("#cards").innerHTML = createCard(searchedDate)
+function setDatesClickable() {
+  const dates = document.querySelectorAll(".days li")
+  dates.forEach((i) => {
+    i.addEventListener("click", () => {
+      changeColors()
+      modal.style.display = "none"
+      getBody.style.backgroundSize = "cover"
+      const searchedDate = searchDate(i.getAttribute("data"))
+      delay = -0.4
+      document.querySelector("#cards").innerHTML = createCard(searchedDate)
+    })
+  })
+}
+
+renderCalendar()
+
+prevNextIcon.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1
+    if (currMonth < 0) {
+      currMonth = 11
+      currYear -= 1
+    } else if (currMonth > 11) {
+      currMonth = 0
+      currYear += 1
+    }
+    renderCalendar()
   })
 })
+
 
 const homePage = document.querySelector("#house-side-menu")
 homePage.onclick = function() {
