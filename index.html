@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendário de Jogos</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
-      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon-worldcup.png">
   </head>
 
 
@@ -21,11 +21,41 @@
       <header>
         <img src="./assets/logo.svg" alt="logo da NLW">
       </header>
+      <main id="cards">
+
+      </main>
     </div>
     <div class="sidebar">
-      <i class="left-menu-icon fa-solid fa-magnifying-glass" id="icon-side-menu"></i>
-      <i class="left-menu-icon fa-regular fa-calendar-days" id="icon-side-menu"></i>
+      <i class="left-menu-icon fa-solid fa-house" id="house-side-menu"></i>
+      <i class="left-menu-icon fa-regular fa-calendar-days" id="calendar-side-menu"></i>
     </div>
+
+    <div id="calendar-modal">
+      <div id="modal-content" class="wrapper">
+        <i id="close-modal" class="fa-solid fa-xmark"></i>
+        <header>
+          <p class="current-date"></p>
+          <div class="icons">
+            <i id="prev" class="fa-solid fa-chevron-left"></i>
+            <i id="next" class="fa-solid fa-chevron-right"></i>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Dom</li>
+            <li>Seg</li>
+            <li>Ter</li>
+            <li>Qua</li>
+            <li>Qui</li>
+            <li>Sex</li>
+            <li>Sáb</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+    </div>
+    
   </body>
+  <!-- <script type="text/JavaScript" src="./calendar.js"></script> -->
   <script type="module" src="main.js"></script>
 </html>
